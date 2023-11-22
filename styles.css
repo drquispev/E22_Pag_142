@@ -1,0 +1,90 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+.FONDO {
+    position: absolute;
+    top: 0%;
+    display: flex;
+    flex-direction: column;
+    border: 4px solid black;
+    border-radius: 10px;
+    min-height: 590px;
+    min-width: 1340px;
+    /*max-width: 1360px;*/
+    background: greenyellow;
+    gap: 10px;
+}
+
+.Enunciado {
+    position: relative;
+    min-height: 285px;
+    min-width: 635px;
+    background: aqua;
+    border: 4px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+   
+    justify-content: center;
+    align-items: center;
+}
+
+.Contenedor_h1{
+    position: relative;
+    top: 0%;
+    right: 15%;
+    /*background-color: whitesmoke;*/
+}
+
+h1 {
+    width: 400px;
+    height: 50px;
+    /*padding: 2px 2px 2px 2px;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0%;
+    font-size: 2em;
+    color: black;
+    background: white;
+    text-align: center;
+    border: 4px solid black;
+    border-radius: 8px;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+}
+
+p {
+    min-width: 1300px;
+    height: 100%;
+    /*padding: 2px 2px 2px 2px;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0%;
+    font-size: 1em;
+    color: black;
+    background: white;
+    text-align: center;
+    border: 4px solid black;
+    border-radius: 8px;
+    font-family: 'Comic Neue', cursive;
+}
+
+.Resolucion {
+    position: relative;
+    min-height: 285px;
+    min-width: 635px;
+    background: aqua;
+    border: 4px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
