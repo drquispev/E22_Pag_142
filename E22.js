@@ -120,14 +120,19 @@ function Desarrollo_E22() {
 	} 
 
 	// DOM 
+
 	var Contenedor = document.getElementById("Resolucion");
+	var Contenedor_F = document.createElement("div");
+	Contenedor_F.className = "SEPARADOR";
+	var Contenedor_R = document.createElement("div");
+	Contenedor_R.className = "Resultados";
 
 	// TITULO - DOM 
 	var Contenedor_Titulo = document.createElement("div");
-    Contenedor_Titulo.className = "Contenedor_Media";
+    Contenedor_Titulo.className = "Contenedor_Titulo";
     
-	var Etiqueta_Titulo = document.createElement("h3");
-    Etiqueta_Titulo.className = "Etiqueta_Paso_M";
+	var Etiqueta_Titulo = document.createElement("h1");
+    Etiqueta_Titulo.className = "Etiqueta_Paso_T";
     Etiqueta_Titulo.textContent = "RESOLUCIÓN";
     
 	Contenedor_Titulo.appendChild(Etiqueta_Titulo);
@@ -136,6 +141,7 @@ function Desarrollo_E22() {
 
 	// TABLA - DOM
 	var Contenedor_Tabla = document.createElement("div");
+	Contenedor_Tabla.className = "Contenedor_Tabla";
 	var Tabla = document.createElement("table");
 	Tabla.id = "Tabla_E22";
 
@@ -151,7 +157,7 @@ function Desarrollo_E22() {
 	// PRIMERA FILA (DATOS) - DOM
 	for (let i = 0; i < 60; i++ ) {
 		var Fila_Celda = document.createElement("td");
-		Fila_Celda.className = "Celda_Date";
+		Fila_Celda.className = "Celda_Date"; //Celda_Date
 		Fila_Celda.textContent = `${MATRIX_RESULTANTE[i][0]}`; 
 		Tabla_Fila_A.appendChild(Fila_Celda);
 	}
@@ -170,7 +176,7 @@ function Desarrollo_E22() {
 	
 	for (let i = 0; i < 60; i++ ) {
 		var Fila_Celda = document.createElement("td");
-		Fila_Celda.className = "Celda_Date";
+		Fila_Celda.className = "Celda_Date";//Celda_Date
 		Fila_Celda.textContent = `${MATRIX_RESULTANTE[i][1]}`; 
 		Tabla_Fila_B.appendChild(Fila_Celda);
 	}
@@ -189,7 +195,7 @@ function Desarrollo_E22() {
 
 	for (let i = 0; i < 60; i++ ) {
 		var Fila_Celda = document.createElement("td");
-		Fila_Celda.className = "Celda_Date";
+		Fila_Celda.className = "Celda_Date";//Celda_Date
 		Fila_Celda.textContent = `${MATRIX_RESULTANTE[i][2]}`; 
 		Tabla_Fila_C.appendChild(Fila_Celda);
 	}
@@ -197,7 +203,8 @@ function Desarrollo_E22() {
 	Tabla.appendChild(Tabla_Fila_C);
 
 	Contenedor_Tabla.appendChild(Tabla);
-	Contenedor.appendChild(Contenedor_Tabla);
+	Contenedor_F.appendChild(Contenedor_Tabla);
+	Contenedor.appendChild(Contenedor_F); // MOD
 
 	// MEDIA Y DESVIACIÓN ESTANDAR
 	Media = Number((Media / 60).toFixed(2));
@@ -223,25 +230,31 @@ function Desarrollo_E22() {
 	Contenedor_Media.appendChild(Etiqueta_Media);
     Contenedor_Media.appendChild(Media_Resultado);
 
-	Contenedor.appendChild(Contenedor_Media);
+	Contenedor_R.appendChild(Contenedor_Media);
+	//Contenedor.appendChild(Contenedor_R);
 
 	// DESVIACIÓN ESTANDAR - DOM
 	var Contenedor_Desviacion = document.createElement("div");
     Contenedor_Desviacion.className = "Contenedor_Desviacion";
     
 	var Etiqueta_Desviacion = document.createElement("h3");
-    Etiqueta_Desviacion.className = "Etiqueta_Paso_M";
-    Etiqueta_Desviacion.textContent = "Media muestral"
+    Etiqueta_Desviacion.className = "Etiqueta_Paso_D";
+    Etiqueta_Desviacion.textContent = "Desviación Estándar"
     
 	var Desviacion_Resultado = document.createElement("h3");
-    Desviacion_Resultado.className = "Resultado_Paso_M";
+    Desviacion_Resultado.className = "Resultado_Paso_D";
     Desviacion_Resultado.textContent = `${Desviacion_Estandar}`;
     
 	Contenedor_Desviacion.appendChild(Etiqueta_Desviacion);
     Contenedor_Desviacion.appendChild(Desviacion_Resultado);
 
-	Contenedor.appendChild(Contenedor_Desviacion);
+	Contenedor_R.appendChild(Contenedor_Desviacion);
+	//Contenedor.appendChild(Contenedor_R);
 
+	Contenedor_F.appendChild(Contenedor_R);
+	Contenedor.appendChild(Contenedor_F);
+	//Contenedor_F.appendChild(Contenedor_R);
+	//Contenedor.appendChild(Contenedor_F);
 	console.log("Viajes - Numero de sacos - Peso de cada saco \n");
 	console.log(MATRIX_RESULTANTE);
 	console.log(`Media: ${Media}`);
